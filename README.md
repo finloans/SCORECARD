@@ -1,0 +1,2 @@
+# SCORECARD
+finloans EMI calculator
