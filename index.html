@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLoans Property Evaluation Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e90ff, #87cefa);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: white;
+            border: 5px solid #1e90ff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #1e90ff;
+        }
+
+        label, select, input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #1e90ff;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4682b4;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            text-align: center;
+        }
+
+        .criteria, .property-details {
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 16px;
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="log.png" alt="FinLoans Logo" class="logo">
+        </div>
+
+        <h1>FinLoans Property Evaluation Calculator</h1>
+
+        <!-- Property Details Section -->
+        <div class="property-details">
+            <h2>Property Details</h2>
+
+            <label for="propertyType">Property Type:</label>
+            <select id="propertyType">
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+            </select>
+
+            <label for="subType">Property Sub-type (Flats, Duplex, Mall, etc.):</label>
+            <input type="text" id="subType" placeholder="Enter sub-type (e.g. Flats, Duplex, Mall, etc.)">
+
+            <label for="pricePerSqft">Price Per Sq. Ft. (₹):</label>
+            <input type="number" id="pricePerSqft" placeholder="Enter price per sq. ft.">
+
+            <!-- Criteria Section -->
+            <div class="criteria">
+                <h2>Evaluation Criteria</h2>
+
+                <label for="builderReputation">Builder's Reputation:</label>
+                <select id="builderReputation">
+                    <option value="10">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <label for="reraRegistration">RERA Registration:</label>
+                <select id="reraRegistration">
+                    <option value="10">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <label for="legalClearances">Legal Clearances:</label>
+                <select id="legalClearances">
+                    <option value="10">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <label for="constructionQuality">Construction Quality:</label>
+                <select id="constructionQuality">
+                    <option value="10">High</option>
+                    <option value="5">Medium</option>
+                    <option value="0">Low</option>
+                </select>
+
+                <label for="locationAmenities">Location and Amenities:</label>
+                <select id="locationAmenities">
+                    <option value="10">Excellent</option>
+                    <option value="5">Good</option>
+                    <option value="3">Average</option>
+                    <option value="0">Poor</option>
+                </select>
+
+                <label for="pricePaymentPlan">Price and Payment Plan:</label>
+                <select id="pricePaymentPlan">
+                    <option value="10">Flexible</option>
+                    <option value="5">Standard</option>
+                    <option value="0">Rigid</option>
+                </select>
+
+                <label for="propertySize">Property Size and Layout:</label>
+                <select id="propertySize">
+                    <option value="10">Spacious</option>
+                    <option value="5">Average</option>
+                    <option value="0">Small</option>
+                </select>
+
+                <label for="homeLoan">Home Loan Eligibility:</label>
+                <select id="homeLoan">
+                    <option value="10">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <label for="timelinePossession">Timeline for Possession:</label>
+                <select id="timelinePossession">
+                    <option value="10">On-time</option>
+                    <option value="5">Delayed</option>
+                    <option value="0">Very delayed</option>
+                </select>
+
+                <label for="agreement">Builder-Buyer Agreement:</label>
+                <select id="agreement">
+                    <option value="10">Fair</option>
+                    <option value="0">Unfair</option>
+                </select>
+
+                <label for="resaleRental">Resale and Rental Value:</label>
+                <select id="resaleRental">
+                    <option value="10">High</option>
+                    <option value="5">Average</option>
+                    <option value="0">Low</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- Calculate Button -->
+        <button id="calculateButton">Evaluate Property</button>
+
+        <!-- Result Display -->
+        <div class="result" id="result"></div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            For more details, contact FinLoans on 9827603070 (Mob).
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
